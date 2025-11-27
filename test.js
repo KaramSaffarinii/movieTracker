@@ -1,9 +1,6 @@
-const { readDB, writeDB } = require("./utils/jsonDB.js");
+const { signup, login } = require("./services/authServices");
 
-const testUsers = [{ id: 1, username: "ahmad", password: "123456" }];
+signup("ahmad", "ahmad@example.com", "123456", "user");
 
-writeDB(testUsers);
-
-const result = readDB();
-
-console.log("Result:", result);
+const result = login("ahmad@example.com", "123456");
+console.log(result);
